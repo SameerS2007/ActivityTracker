@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Activity>
+
+<h1 class="text-center">Activity List</h1>
+<hr />
+<br />
+
+<div style="display: flex; flex-wrap: wrap;">
+    @foreach (var item in Model)
+    {
+        <div class="card" style=" color: black">
+            <div class="container">
+                <div style="display: flex">
+                    <h3>@item.Name</h3>
+                    <p style="margin-left: 30px;">Date: @item.Date</p>
+                </div>
+            </div>
+        </div>
+    }
+    
+</div>

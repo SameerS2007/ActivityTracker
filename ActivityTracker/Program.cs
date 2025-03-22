@@ -1,3 +1,6 @@
+using ActivityTracker.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace ActivityTracker
 {
     public class Program
@@ -8,6 +11,7 @@ namespace ActivityTracker
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlite("Data Source=Activities.db"));
 
             var app = builder.Build();
 
@@ -28,7 +32,7 @@ namespace ActivityTracker
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Activity}/{action=Index}/{id?}");
 
             app.Run();
         }

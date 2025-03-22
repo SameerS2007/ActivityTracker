@@ -1,0 +1,13 @@
+﻿@model Activity
+
+<h1 class="text-center">Create an Activity!</h1>
+<hr />
+<br />
+
+<form method="post">
+    <label>Activity Name: </label><br /><input asp-for="@Model.Name" name="Name" /><br />
+    <label>Date: </label><br /><input asp-for="@Model.Date" name="Date" />
+    
+    <input type="submit" />
+
+</form>
